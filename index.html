@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GourmetLOG</title>
 
+
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -32,109 +33,47 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-6 right-mark">
+                            <div class="col-md-12 right-mark">
                                 <div class="login-container">
                                     <h6>Login</h6>
                                     <form class="login-form" onsubmit="return validateForm()">
                                         <div class="mb-3">
                                             <label for="username" class="form-label">Usuário:</label>
-                                            <input type="text" id="username" name="username" class="form-control"
-                                                required>
+                                            <input type="text" id="username" name="username" class="form-control" required>
                                         </div>
                                         <div class="form-group" style="position: relative;">
                                             <label for="password" class="form-label">Senha:</label>
 
-                                            <input type="password" id="password" name="password" class="form-control"
-                                                required>
+                                            <input type="password" id="password" name="password" class="form-control" required>
 
                                             <span class="password-toggle" id="password-toggle">
 
-                                                <svg xmlns="icons/eye" width="20" height="20" fill="currentColor"
-                                                    class="bi bi-eye-slash" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd"
-                                                        d="M1.646 1.646a.5.5 0 0 1 .708 0l12 12a.5.5 0 0 1-.708.708l-12-12a.5.5 0 0 1 0-.708z" />
-                                                    <path fill-rule="evenodd"
-                                                        d="M1.146 7.646a7.5 7.5 0 0 1 10.51 0 .5.5 0 0 0 .708 0 8.5 8.5 0 0 0-11.916 0 .5.5 0 0 0 .708 0z" />
-                                                    <path fill-rule="evenodd"
-                                                        d="M8 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-1 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                                <svg xmlns="icons/eye" width="20" height="20" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M1.646 1.646a.5.5 0 0 1 .708 0l12 12a.5.5 0 0 1-.708.708l-12-12a.5.5 0 0 1 0-.708z" />
+                                                    <path fill-rule="evenodd" d="M1.146 7.646a7.5 7.5 0 0 1 10.51 0 .5.5 0 0 0 .708 0 8.5 8.5 0 0 0-11.916 0 .5.5 0 0 0 .708 0z" />
+                                                    <path fill-rule="evenodd" d="M8 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-1 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                                 </svg>
-
                                             </span>
-
                                         </div>
                                         <div class="d-grid gap-2">
-                                            <button type="submit" class="btn btn-danger btn-box"
-                                                id="login-button">Entrar</button>
+                                            <button type="submit" class="btn btn-danger btn-box" id="login-button">Entrar</button>
                                         </div>
                                     </form>
                                     <div class="options">
-                                        <div class="option">
-
-                                            <a href="formularioSenha.html">Esqueci minha senha</a>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="option">
+                                                    <a href="formularioSenha.html">Esqueci minha senha</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="option">
+                                                    <a href="usuario-cadastro-modelo.html">Não tenho cadastro ainda</a>
+                                                </div>
+                                            </div>
                                         </div>
-
-
                                     </div>
                                 </div>
-
-
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <h6>Ainda não tem conta?</h6>
-                                <form id="formulario">
-                                    <div class="mb-3">
-                                        <label for="nome" class="form-label">Nome</label>
-                                        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome"
-                                            required>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="cpf" class="form-label">CPF</label>
-                                        <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF"
-                                            required>
-                                        <div id="cpf-counter" class="text-muted">0/11</div>
-                                        <div id="cpf-error" class="text-danger"></div>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-                                        <input type="date" class="form-control" id="dataNascimento" required>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">E-mail</label>
-                                        <input type="email" class="form-control" id="email"
-                                            placeholder="Digite seu E-mail" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="confirmarEmail" class="form-label">Confirme seu E-mail</label>
-                                        <input type="email" class="form-control" id="confirmarEmail"
-                                            placeholder="Confirme seu E-mail" required>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="senha" class="form-label">Senha</label>
-                                        <input type="password" class="form-control" id="senha"
-                                            placeholder="Digite sua senha (mínimo de 8 caracteres)" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="confirmarSenha" class="form-label">Confirme a Senha</label>
-                                        <input type="password" class="form-control" id="confirmarSenha"
-                                            placeholder="Confirme sua senha" required>
-                                        <small id="senhaHelp" class="form-text text-muted">A senha deve conter no mínimo
-                                            8
-                                            caracteres.</small>
-                                    </div>
-                                    <div class="d-grid gap-2">
-                                        <button type="submit" class="btn btn-danger btn-box">Cadastrar</button>
-                                        <div class="alert alert-success alert-cadastro" role="alert">
-                                            Cadastro concluído!
-                                        </div>
-                                    </div>
-                                </form>
-
                             </div>
                         </div>
                     </div>
@@ -153,9 +92,7 @@
                 <img src="img/G-Gourmetlog.svg" alt="" width="50" height="50" class="d-inline-block align-flex">
                 GourmetLOG
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -260,7 +197,7 @@
 
     <!--Fim Footer-->
 
-    
+
 
     <!--Script Login-->
 
@@ -356,7 +293,7 @@
                 return false;
             }
 
-            if (senha.length <script 8) {
+            if (senha.length < script 8) {
                 alert('A senha deve conter no mínimo 8 caracteres.');
                 return false;
             }
@@ -381,9 +318,9 @@
 
         const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 
-        </script>
+    </script>
 
-   
+
 
 
 
