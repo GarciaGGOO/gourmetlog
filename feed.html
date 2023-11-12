@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GOURMETLOG</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header-->
+    <nav class="navbar navbar-expand-md bg-body-tertiary py-3 box-shadow text-center">
+        <div class="container-lg">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/G-Gourmetlog.svg" alt="" width="50" height="50" class="d-inline-block align-flex">
+                GourmetLOG
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item px-1">
+                        <a class="nav-link " aria-current="page" href="restaurante-cadastro.html">Cadastre seu
+                            Restaurante</a>
+                    </li>
+                    <li class="nav-item px-1">
+                        <a class="nav-link " aria-current="page" href="faq.html">Perguntas Frequentes</a>
+                    </li>
+                    <li class="nav-item px-1">
+                        <a class="nav-link active" aria-current="page" href="feed.html">Faça Reservas</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="btn btn-outline-danger ml-md-2" aria-current="page" href="login.html">Login</a>
+                    </li>
+            </div>
+    </nav>
+    <!-- Fim Header-->
+
+
+    <div class="container-sm">
+
+        <div class="row mt-3">
+            <div class="col-md-3 filters">
+                <div class="row area-sidebar">
+                    <div class="box">
+                        <div class="title">Buscar</div>
+                        <div class="options">
+                            <form class="search" method="GET" action="">
+                                <input id="term" name="busca" type="text" class="form-control"
+                                    placeholder="Cidade, nome do restaurante, bairro, tipo de comida..." value=""
+                                    autocomplete="off">
+                            </form>
+                        </div>
+                    </div>
+                    <aside id="restaurant-filters">
+                        <div>
+                            <div class="header  visible-xs visible-sm py-3">Filtrar Resultados </div>
+                            <div class="area closed">
+                                <div class="box">
+                                    <div class="title"><img src="icons/clock.svg" alt="Período"> Período</div>
+                                    <div class="options">
+                                        <div>
+                                            <div id="hour_slider"
+                                                class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                                                <div class="ui-slider-range ui-corner-all ui-widget-header"
+                                                    style="left: 6.66667%; width: 86.6667%;"></div><span tabindex="0"
+                                                    class="ui-slider-handle ui-corner-all ui-state-default"
+                                                    style="left: 6.66667%;"></span><span tabindex="0"
+                                                    class="ui-slider-handle ui-corner-all ui-state-default"
+                                                    style="left: 93.3333%;"></span>
+                                            </div>
+                                            <p>7h <i class="fa fa-arrows-h"></i> 20h</p> <input type="hidden"
+                                                name="price_min" value="7"> <input type="hidden" name="price_max"
+                                                value="20">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <div class="title py-3"><img src="icons/calendar.svg" alt="Disponibilidade">
+                                        Disponibilidade</div>
+                                    <div class="options">
+                                        <div><input id="available_today" name="available_today" type="checkbox"
+                                                value="on"><label for="available_today"><strong>Hoje</strong></label>
+                                        </div>
+                                        <div><input id="only_ranking" name="only_ranking" type="checkbox"
+                                                value="on"><label for="only_ranking"><strong>Mais
+                                                    Reservados</strong></label></div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <div class="title py-3"><img src="icons/cup-hot.svg" alt="Serviços"> Serviços
+                                    </div>
+                                    <div class="options">
+                                        <div><input id="service_wifi" name="wifi" type="checkbox" value="on"><label
+                                                for="service_wifi">Wifi</label></div>
+                                        <div><input id="service_open_air" name="open_air" type="checkbox"
+                                                value="on"><label for="service_open_air">Mesa ao ar livre</label></div>
+                                        <div><input id="service_air_conditioning" name="air_conditioning"
+                                                type="checkbox" value="on"><label for="service_air_conditioning">Ar
+                                                condicionado</label></div>
+                                        <div><input id="service_disability_access" name="disability_access"
+                                                type="checkbox" value="on"><label for="service_disability_access">Acesso
+                                                para deficientes</label></div>
+                                        <div><input id="service_smoking_area" name="smoking_area" type="checkbox"
+                                                value="on"><label for="service_smoking_area">Área para fumantes</label>
+                                        </div>
+                                        <div><input id="service_parking" name="service_parking" type="checkbox"
+                                                value="on"><label for="service_parking">Estacionamento</label></div>
+                                        <div><input id="service_kids" name="kids" type="checkbox" value="on"><label
+                                                for="service_kids">Espaço kids</label></div>
+                                        <div><input id="service_dogfriendly" name="dogfriendly" type="checkbox"
+                                                value="on"><label for="service_dogfriendly">Aceita cachorros</label>
+                                        </div>
+                                        <div><input id="service_join_table" name="join_table" type="checkbox"
+                                                value="on"><label for="service_join_table">Permite juntar mesas</label>
+                                        </div>
+                                        <div><input id="service_all_you_eat" name="all_you_eat" type="checkbox"
+                                                value="on"><label for="service_all_you_eat">Rodízio</label></div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <div class="title py-3"><img src="icons/globe-americas.svg" alt="Cozinha"> Cozinha
+                                    </div>
+                                    <div class="options">
+                                        <div><input id="food_type_0" name="{{filters.food_type}}" type="checkbox"
+                                                value="Brasileira"><label for="food_type_0">Brasileira</label></div>
+                                        <div><input id="food_type_1" name="{{filters.food_type}}" type="checkbox"
+                                                value="Mineira"><label for="food_type_1">Mineira</label></div>
+                                        <div><input id="food_type_2" name="{{filters.food_type}}" type="checkbox"
+                                                value="Nordestina"><label for="food_type_2">Nordestina</label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+            </div>
+            <div id="restaurant-list" class="list col-md-9">
+                <div class="row py-2">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://a.cdn-hotels.com/gdcs/production156/d1067/98b5cb4d-ea36-43fd-b3ca-21ae04c7c770.jpg"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://www.wzhoteljardins.com.br/wp-content/uploads/2020/10/WZ-Hotel-Jardins-955-Lounge-e-Restaurante-19.jpg"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://www.wzhoteljardins.com.br/wp-content/uploads/2020/10/WZ-Hotel-Jardins-955-Lounge-e-Restaurante-19.jpg"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9">
+                            <div class="title py-2">
+                                <a href="restaurante-info1.html">RESTAURANTE</a>
+                            </div>
+
+                            <p>Bem-vindo ao Restaurante Delícias Gourmet, onde a culinária encontra a sofisticação em um
+                                ambiente acolhedor
+                                e elegante. Localizado no coração da cidade, somos o destino perfeito para os amantes da
+                                gastronomia que
+                                buscam uma experiência única.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="row py-5">
+                        <div class="col-md-3">
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://a.cdn-hotels.com/gdcs/production156/d1067/98b5cb4d-ea36-43fd-b3ca-21ae04c7c770.jpg"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://www.wzhoteljardins.com.br/wp-content/uploads/2020/10/WZ-Hotel-Jardins-955-Lounge-e-Restaurante-19.jpg"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://www.wzhoteljardins.com.br/wp-content/uploads/2020/10/WZ-Hotel-Jardins-955-Lounge-e-Restaurante-19.jpg"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9">
+                            <div class="title py-2">
+                                <a href="restaurante-info2.html">RESTAURANTE</a>
+                            </div>
+
+                            <p>Bem-vindo ao Restaurante Delícias Gourmet, onde a culinária encontra a sofisticação em um
+                                ambiente acolhedor
+                                e elegante. Localizado no coração da cidade, somos o destino perfeito para os amantes da
+                                gastronomia que
+                                buscam uma experiência única.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://a.cdn-hotels.com/gdcs/production156/d1067/98b5cb4d-ea36-43fd-b3ca-21ae04c7c770.jpg"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://www.wzhoteljardins.com.br/wp-content/uploads/2020/10/WZ-Hotel-Jardins-955-Lounge-e-Restaurante-19.jpg"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://www.wzhoteljardins.com.br/wp-content/uploads/2020/10/WZ-Hotel-Jardins-955-Lounge-e-Restaurante-19.jpg"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9">
+                            <div class="title py-2">
+                                <a href="restaurante-info3.html">RESTAURANTE</a>
+                            </div>
+
+                            <p>Bem-vindo ao Restaurante Delícias Gourmet, onde a culinária encontra a sofisticação
+                                em um
+                                ambiente acolhedor
+                                e elegante. Localizado no coração da cidade, somos o destino perfeito para os
+                                amantes da
+                                gastronomia que
+                                buscam uma experiência única.</p>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row py-5">
+                        <div class="col-md-3">
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://a.cdn-hotels.com/gdcs/production156/d1067/98b5cb4d-ea36-43fd-b3ca-21ae04c7c770.jpg"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://www.wzhoteljardins.com.br/wp-content/uploads/2020/10/WZ-Hotel-Jardins-955-Lounge-e-Restaurante-19.jpg"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://www.wzhoteljardins.com.br/wp-content/uploads/2020/10/WZ-Hotel-Jardins-955-Lounge-e-Restaurante-19.jpg"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9">
+                            <div class="title py-2">
+                                <a href="restaurante-info4.html">RESTAURANTE</a>
+                            </div>
+
+                            <p>Bem-vindo ao Restaurante Delícias Gourmet, onde a culinária encontra a sofisticação
+                                em um
+                                ambiente acolhedor
+                                e elegante. Localizado no coração da cidade, somos o destino perfeito para os
+                                amantes da
+                                gastronomia que
+                                buscam uma experiência única.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!--Footer-->
+
+    <footer class="bg-dark text-white">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col justify-content-center">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="nav-link active" href="contato.html">Fale Conosco</a>
+                        </li>
+                        <li>
+                            <a class="nav-link active" href="faq.html">Políticas de Privacidade e Termos de Uso</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!--Fim Footer-->
+
+    <!--Script-->
+
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
